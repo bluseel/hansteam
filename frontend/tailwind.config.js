@@ -62,6 +62,10 @@ module.exports = {
         },
       },
 
+      backgroundImage: {
+        'black-to-transparent': 'linear-gradient(to top, black, transparent)',
+      },
+
       fontSize: {
         'hero-heading': ['4rem', {
           lineHeight: '5rem',
@@ -105,12 +109,11 @@ module.exports = {
         },
 
       },
-
       
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        'translateHeroBackground': "keyfram-HeroTitles 5s linear infinite",
+        'translateHeroBackground': "keyfram-HeroTitles 15s linear infinite",
 
       },
 
