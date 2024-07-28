@@ -28,15 +28,15 @@ const Navbar = () => {
   
 
   return (
-    <div className="absolute w-full  bg-blue-500">
+    <div className="absolute w-full">
       {/* hamburger for mobile only */}
-      <div onClick={()=>(setShowMobileMenu(!showMobileMenu))} className="-right-96 max-[600px]:right-4 h-12 w-12 absolute top-8 bg-primary-yellow px-3  z-[12] ">
+      <div onClick={()=>(setShowMobileMenu(!showMobileMenu))} className="md:hidden -right-96 max-[600px]:right-4 h-12 w-12 absolute top-8 bg-primary-yellow px-3  z-[12] ">
         <img src={hamburger} className="h-full w-full" alt="" />
       </div>
 
 
       {/* main thing */}
-      <div className="flex items-center justify-between p-4  text-white h-full relative z-[10]" >
+      <div className="flex items-center justify-between p-4  text-white h-full relative z-[100]" >
         <div className="w-1/2 h-1/2">
           <img src={logo} alt="Logo" className="h-20" />
         </div>
