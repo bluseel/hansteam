@@ -68,46 +68,43 @@ const WhyUs = () => {
     return { value, ref };
   };
 
-return (
-  <div className="h-[100dvh] bg-primary-blue text-neutral-white"
-  style={{
-    backgroundImage: "url('/bg.svg')",
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat' 
-  }
-  }>
-    <div className="ml-[10%] w-[80%] text-justify leading-[9rem] #F6E100">
-      {/* hans message */}
-      <div className="text-5xl">
-        "You do not need an agent. You need
-        <span className="text-7xl text-primary-yellow italic font-extrabold tracking-tight"> team </span>.
-        And not just any team, but a team of 50 professionals with <span className="text-7xl text-nowrap text-primary-yellow italic font-extrabold tracking-tight"> 20 years  </span> of experience!"
+  return (
+    <div className="h-[100dvh] bg-primary-blue text-neutral-white max-[600px]:pt-6">
+      <div className="ml-[10%] w-[80%] text-justify leading-[9rem] #F6E100">
+        {/* hans message */}
+        <div className="text-5xl max-[600px]:text-4xl max-[400px]:text-3xl">
+          "You do not need an agent. You need
+          <span className=" max-[600px]:text-5xl max-[400px]:text-4xl text-7xl text-primary-yellow italic font-extrabold tracking-tight"> team </span>.
+          And not just any team, but a team of 50 professionals with <span className="max-[400px]:text-4xl max-[600px]:text-5xl text-7xl text-nowrap text-primary-yellow italic font-extrabold tracking-tight"> 20 years  </span> of experience!"
+        </div>
+        <div className="max-[400px]:text-2xl max-[600px]:text-3xl text-4xl text-primary-yellow">~Hans</div>
       </div>
-      <div className="text-4xl text-primary-yellow">~Hans</div>
-    </div>
 
-    {/* Stats about hands */}
-    <div className="relative pt-2">
-      <div className="text-neutral-white flex w-full">
-        {stats.map((stat, index) => {
-          const { value, ref } = animateValue(stat.number, stat.number < 10);
-          return (
-            <div key={index} className="flex-1 flex flex-col content-center items-center" ref={ref}>
-              <div className="h-40">
-                <img src={stat.icon} alt={stat.alt} className="w-full h-full" />
+      {/* Stats about hands */}
+      <div className="relative pt-2 max-[600px]:pt-8">
+        <div className=" text-neutral-white flex w-full max-[600px]:flex-col max-[600px]:items-center">
+          {stats.map((stat, index) => {
+            const { value, ref } = animateValue(stat.number, stat.number < 10);
+            return (
+              <div key={index} className="flex-1 flex flex-col max-[600px]:flex-row place-content-center items-center overflow-hidden" ref={ref}>
+                <div className="max-[400px]:h-24 h-40 max-[600px]:pr-4 ">
+                  <img src={stat.icon} alt={stat.alt} className="w-full h-full" />
+                </div>
+                
+                <div className="flex flex-col items-center max-[600px]:place-content-center">
+                  <div className="text-5xl">
+                    {stat.number < 10 ? `${value}B+` : `${value}+`}
+                  </div>
+                  <div>{stat.name}</div>
+                </div>
+
               </div>
-              <div className="text-5xl">
-                {stat.number < 10 ? `${value}B+` : `${value}+`}
-              </div>
-              <div>{stat.name}</div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default WhyUs;
