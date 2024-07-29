@@ -67,7 +67,8 @@ const RealEstateForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-black text-[1rem] p-2 ">
-      <div className="grid  grid-cols-4 max-[600px]:grid-cols-2  gap-4 ">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+
         <div >
           <label htmlFor="firstName" className={inputLabelStyling}>First Name:</label>
           <input {...register('firstName')} className={inputFieldStyling} />
@@ -144,78 +145,55 @@ const RealEstateForm: React.FC = () => {
 
 
 
-        <div className="max-[600px]:col-span-2 col-span-4 ">
-          <label htmlFor="priceRange" className={inputLabelStyling}>Price Range:
-            <span className='text-primary-yellow text-[1rem]'>
-              {(priceRange[1] === 2000000 && priceRange[0] === 0) ? ' Any-Any (move yellow circles)' :
-
-                ` $${priceRange[0].toLocaleString()} - $${priceRange[1].toLocaleString()}`
-              }
-            </span>
-
-          </label>
-          <div className="mt-2 px-3">
-            <Slider
-              range
-              min={0}
-              max={2000000}
-              step={50000}
-              value={priceRange}
-              onChange={onSliderChange}
-              trackStyle={[{ backgroundColor: '#1890ff', height: "10px" }]}
-              handleStyle={[
-                { borderColor: '#1890ff', backgroundColor: "yellow", opacity: "1", height: 24, width: 24, marginTop: -7 },
-                { borderColor: '#1890ff', backgroundColor: "yellow", opacity: "1", height: 24, width: 24, marginTop: -7 }
-              ]}
-            />
-            <div className="flex justify-between mt-2">
-              <div>
-
-                <label htmlFor="minPrice" className="block text-sm font-medium  text-white">$0</label>
-                <input
-                  type="number"
-                  value={priceRange[0]}
-                  onChange={(e) => onSliderChange([Number(e.target.value), priceRange[1]])}
-                  className="border-gray-300 rounded-md shadow-sm hidden"
-                  min={0}
-                  max={2000000}
-                  step={50000}
-                />
-              </div>
-
-              <div>
-
-                <label htmlFor="minPrice" className="block text-sm font-medium  text-white">$2,000,0000</label>
-                <input
-                  type="number"
-                  value={priceRange[1]}
-                  onChange={(e) => onSliderChange([priceRange[0], Number(e.target.value)])}
-                  className="border-gray-300 rounded-md shadow-sm hidden"
-                  min={0}
-                  max={2000000}
-                  step={50000}
-                />
-              </div>
-
-            </div>
-          </div>
+        <div>
+          <label htmlFor="minPrice" className={inputLabelStyling}>Min Price:</label>
+          <select {...register('minPrice')} className={inputFieldStyling}>
+            <option value="0">No Min</option>
+            {[...Array(40)].map((_, i) => {
+              const price = i * 50000;
+              return (
+                <option key={i} value={price}>
+                  ${price.toLocaleString()}
+                </option>
+              );
+            })}
+          </select>
           {errors.minPrice && <p className={errorStyling}>{errors.minPrice.message}</p>}
+        </div>
+
+
+        <div>
+          <label htmlFor="maxPrice" className={inputLabelStyling}>Max Price:</label>
+          <select {...register('maxPrice')} className={inputFieldStyling}>
+            <option value="2000000">No Max</option>
+            {[...Array(40)].map((_, i) => {
+              const price = (i + 1) * 50000;
+              return (
+                <option key={i} value={price}>
+                  ${price.toLocaleString()}
+                </option>
+              );
+            })}
+          </select>
           {errors.maxPrice && <p className={errorStyling}>{errors.maxPrice.message}</p>}
         </div>
 
-
-        <div className="max-[600px]:col-span-2 col-span-4 place-content-start">
-          <label htmlFor="message" className={inputLabelStyling}>Questions / Where Are You Looking?</label>
-          <textarea {...register('message')} className='pl-1 h-28 mt-1  w-full border-gray-300 rounded-md shadow-sm' />
-          {errors.message && <p className={errorStyling}>{errors.message.message}</p>}
-        </div>
-
-
+        {errors.minPrice && <p className={errorStyling}>{errors.minPrice.message}</p>}
+        {errors.maxPrice && <p className={errorStyling}>{errors.maxPrice.message}</p>}
       </div>
 
-      <div className='flex items-center'>
-        <button type="submit" className="bg-primary-yellow text-black px-4 py-2 rounded-md shadow-sm font-bold">Submit</button>
-        <div className='pl-2 text-white w-72 leading-normal'>
+
+      <div className="max-[600px]:col-span-2 col-span-4 place-content-start">
+        <label htmlFor="message" className={inputLabelStyling}>Questions / Where Are You Looking?</label>
+        <textarea {...register('message')} className='pl-1 h-28 mt-1  w-full border-gray-300 rounded-md shadow-sm' />
+        {errors.message && <p className={errorStyling}>{errors.message.message}</p>}
+      </div>
+
+
+
+      <div className='flex flex-col items-center '>
+        <button type="submit" className="-mt-4 w-full bg-primary-yellow text-black px-4 py-2 rounded-md shadow-sm font-bold">Submit</button>
+        <div className='pl-2 text-white leading-normal'>
           Click reCAPTCHA of formsubmit.co after clicking this submit button
         </div>
       </div>

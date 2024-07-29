@@ -27,7 +27,7 @@ const Testimonials = () => {
 
 
   return (
-    <div className=' bg-primary-blue max-[600px]:px-4 px-10 text-neutral-white max-[600px]:text-xl text-3xl 
+    <div className=' min-h-[100dvh] bg-primary-blue max-[600px]:px-4 px-10 text-neutral-white max-[600px]:text-xl text-3xl 
     flex flex-col max-[600px]:gap-[4dvh] gap-[24dvh] overflow-x-hidden w-full'>
 
 

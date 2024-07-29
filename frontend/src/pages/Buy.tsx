@@ -49,37 +49,46 @@ const Buy = () => {
         </div>
         <div>
           Are buying a property for the first time or had bad experience before?
-          <span className='text-primary-yellow italic font-bold text-4xl max-[600px]:text-3xl max-[600px]:text-nowrap'>Be rest assured</span>.<br />
-
-          We at Hans Real Esate will be with you at every inch, to help you and assist you in buying the <span className='text-4xl max-[600px]:text-3xl max-[600px]:text-nowrap text-primary-yellow italic font-bold'>perfect property</span> for you and your family
+          Be rest assured
+          We at Hans Real Esate will be with you at every inch, to help you and assist you in buying the perfect property for you and your family
         </div>
 
         <div>
           <br />
-          Before you start your search, ask yourself:
+          <h2 className='text-3xl font-bold'>
+            Before you start your search, ask yourself:
+          </h2>
           <ul className='text-[1rem] leading-loose'>
             {askYourselfList.map((item, index) => (
-              <li key={index}>
-                {'⦿ '}
-                <span className='font-bold'>{item.heading}</span>
-                {': '}
-                {item.description}
+              <li key={index} className='flex gap-4 text-xl leading-loose'>
+                <div>
+                  {'⦿   '}
+
+                </div>
+                <div>
+
+                  <span className='font-bold ml-'>{item.heading}</span>{': '}
+                  {item.description}
+                </div>
               </li>
             ))}
           </ul>
         </div>
       </div>
 
-      {/* form */}
-      <div>
 
-        <div className='max-[600px]:text-3xl text-5xl font-bold text-justify p-2'>
+
+      {/* form */}
+      <div className='mt-10'>
+
+        <div className='max-[600px]:text-3xl text-3xl font-bold text-justify px-2'>
           Send us requirements
         </div>
 
+
         <BuysellForm />
 
-        <div className='text-[0.7rem] leading-tight px-2'>
+        <div className='text-[0.7rem] leading-tight px-2 mt-10'>
 
           By proceeding, you consent to receive text messages at the number you provided from Hans Real Estate regarding real estate matters, including marketing messages. This is not a condition of purchase. Message frequency may vary. You can text "Help" for assistance. By proceeding, you also agree to our Terms of Service and Privacy Policy. Standard message and data rates may apply.
 
