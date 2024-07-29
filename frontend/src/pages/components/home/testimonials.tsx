@@ -45,10 +45,13 @@ const Testimonials = () => {
           <CarouselContent>
             {VideoTestimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                <div className='max-[600px]:h-full max-[600px]:flex-col-reverse bg-purple-700 w-full  h-[47dvh] flex'>
+                <div className='max-[600px]:h-fit max-[600px]:flex-col-reverse bg-purple-700 w-full  h-[47dvh] flex'>
                   <div className='flex-[1] px-5 py-3'>
-                    <div className='max-[600px]:text-xl text-2xl italic tracking-widest pb-3'>
-                      “{testimonial.name}:”
+                    <div className='flex flex-col leading-none max-[600px]:text-xl pb-3'>
+                      <div className='text-2xl italic tracking-widest '>
+                      {testimonial.name}
+                      </div>
+                      <div className='text-[1rem] font-normal'>{testimonial.occupation}</div>
                     </div>
                     <div className='h-fit max-[600px]:text-[0.9rem] max-[600px]:leading-[20px] max-[600px]:w-full  text-[1.2rem] leading-tight font-thin text-justify'>
                       {testimonial.review}

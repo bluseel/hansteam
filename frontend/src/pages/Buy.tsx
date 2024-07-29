@@ -3,8 +3,43 @@ import BuysellForm from './components/buy/buysellForm';
 
 const Buy = () => {
 
+  const askYourselfList = [
+    {
+      "heading": "Location",
+      "description": "What neighborhoods or communities do you prefer?"
+    },
+    {
+      "heading": "Type of Home",
+      "description": "What style are you looking for? How many bedrooms and bathrooms do you need?"
+    },
+    {
+      "heading": "Special Needs",
+      "description": "Do you need a home office or a bonus room?"
+    },
+    {
+      "heading": "Entertainment",
+      "description": "Do you need a home suitable for hosting guests?"
+    },
+    {
+      "heading": "Outdoor Features",
+      "description": "Do you want a yard, pool, or a gated community?"
+    },
+    {
+      "heading": "Budget",
+      "description": "Have you set a price range or consulted a lender?"
+    },
+    {
+      "heading": "Future Plans",
+      "description": "Are there any future plans or changes you anticipate that might influence your home choice?"
+    },
+    {
+      "heading": "Commute and Accessibility",
+      "description": "How important is the proximity to work, schools, or public transportation?"
+    }
+  ];
+
   return (
-    <div className='pt-28 h-[200dvh] bg-primary-blue text-neutral-white text-2xl max-[600px]:text-xl font-normal'>
+    <div className='pt-28 bg-primary-blue text-neutral-white text-2xl max-[600px]:text-xl font-normal'>
 
       {/*written  */}
       <div className='p-2'>
@@ -21,12 +56,16 @@ const Buy = () => {
 
         <div>
           <br />
-          Things to consider before buying new property:
-          <ul className='text-[1rem] leading-tight'>
-            <li>• asdfkj</li>
-            <li>• Meow</li>
-            <li>• Meow</li>
-            <li>• Meow</li>
+          Before you start your search, ask yourself:
+          <ul className='text-[1rem] leading-loose'>
+            {askYourselfList.map((item, index) => (
+              <li key={index}>
+                {'⦿ '}
+                <span className='font-bold'>{item.heading}</span>
+                {': '}
+                {item.description}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -34,11 +73,21 @@ const Buy = () => {
       {/* form */}
       <div>
 
-        <div className='max-[600px]:text-3xl text-5xl font-bold text-justify'>
+        <div className='max-[600px]:text-3xl text-5xl font-bold text-justify p-2'>
           Send us requirements
         </div>
 
-          <BuysellForm/>
+        <BuysellForm />
+
+        <div className='text-[0.7rem] leading-tight px-2'>
+
+          By proceeding, you consent to receive text messages at the number you provided from Hans Real Estate regarding real estate matters, including marketing messages. This is not a condition of purchase. Message frequency may vary. You can text "Help" for assistance. By proceeding, you also agree to our Terms of Service and Privacy Policy. Standard message and data rates may apply.
+
+          Additionally, you agree to receive calls from Hans Real Estate at the number you provided, including marketing calls made by auto-dialer, pre-recorded or artificial voice, and email communications. This consent remains valid even if you are on a corporate, state, or national Do Not Call list. Calls and messages may be processed by an automated system.
+
+          This site is protected by reCAPTCHA.
+        </div>
+
       </div>
 
     </div>

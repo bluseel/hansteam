@@ -7,22 +7,36 @@ const Navbar = () => {
   
   
   const allPages = ['Buy', 'Sell', 'Mortgage', 'Reach out', 'Our Team of Experts',]
+  
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [toggleMenuStyling, setToggleMenuStyling] = useState("flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[100%] transition-transform")
-  
+  const [onMobileScreen, setOnMobileScreen] = useState(window.innerWidth<700?true:false)
 
-  useEffect(() => {
-    if(showMobileMenu){
-      setToggleMenuStyling(' flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[100%] transition-transform')
-      setTimeout(function(){
-        setToggleMenuStyling(' flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[0%] transition-transform')
-      },  100);
+    useEffect(() => {
+    console.log('menu:', showMobileMenu);
+    if(onMobileScreen){
+      if(showMobileMenu){
+        setToggleMenuStyling(' flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[100%] transition-transform')
+        setTimeout(function(){
+          setToggleMenuStyling(' flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[0%] transition-transform')
+        },  100);
+      }else{
+        setToggleMenuStyling(' flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[100%] transition-transform')
+        setTimeout(function(){
+          if(onMobileScreen){
+            setToggleMenuStyling('hidden flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[0%] transition-transform')
+          }
+        },  100);
+      }
     }else{
-      setToggleMenuStyling(' flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[100%] transition-transform')
-      setTimeout(function(){
-        setToggleMenuStyling('hidden flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[0%] transition-transform')
-      },  100);
+      
+      setToggleMenuStyling(' flex gap-6 max-[600px]:absolute max-[600px]:top-0 max-[600px]:right-0 max-[600px]:-translate-y-[0%] transition-transform')
     }
+
+    console.log('aftermenu:', showMobileMenu);
+
+
+
   
   }, [showMobileMenu])
   
@@ -30,7 +44,7 @@ const Navbar = () => {
   return (
     <div className="absolute w-full">
       {/* hamburger for mobile only */}
-      <div onClick={()=>(setShowMobileMenu(!showMobileMenu))} className="md:hidden -right-96 max-[600px]:right-4 h-12 w-12 absolute top-8 bg-primary-yellow px-3  z-[12] ">
+      <div onClick={()=>(setShowMobileMenu(!showMobileMenu))} className="z-[200] md:hidden -right-96 max-[600px]:right-4 h-12 w-12 absolute top-8 bg-primary-yellow px-3  ">
         <img src={hamburger} className="h-full w-full" alt="" />
       </div>
 
