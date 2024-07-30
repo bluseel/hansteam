@@ -63,10 +63,10 @@ const Sell = () => {
 
 
   return (
-    <div className='py-2 px-4 flex gap-10 flex-col pt-28 bg-primary-blue text-neutral-white text-2xl max-[600px]:text-xl font-normal'>
+    <div className='p-8 flex gap-10 flex-col pt-24 bg-primary-blue text-neutral-white text-2xl max-[600px]:text-lg max-[600px]:leading-tight font-normal'>
 
-      <div>
-        <h1 className='max-[600px]:text-4xl text-5xl font-bold'>
+      <div className='pt-6'>
+        <h1 className='max-[600px]:text-3xl pt-2 text-5xl font-bold text-primary-yellow'>
           Sell Your Property with Hans Real Estate
         </h1>
         Ready to Sell? We’re Here to Help!
@@ -76,20 +76,20 @@ const Sell = () => {
 
       <div>
 
-        <h2 className='max-[600px]:text-[1.8rem] text-3xl font-bold'>
+        <h2 className='max-[600px]:text-2xl text-3xl font-bold'>
 
           Why Sell with Us?
         </h2>
-        <ul>
+        <ul className='flex flex-col gap-4'>
           {whySellWithUs.map((item, index) => (
-            <li key={index} className='flex gap-4 text-xl leading-loose'>
+            <li key={index} className='flex gap-4 '>
               <div>
                 {'⦿   '}
 
               </div>
               <div>
 
-                <span className='font-bold ml-'>{item.heading}</span>{': '}
+                <span className='font-bold'>{item.heading}</span>{': '}
                 {item.description}
               </div>
             </li>
@@ -105,9 +105,9 @@ const Sell = () => {
           Our Selling Process:
 
         </h2>
-        <ul className='list-decimal list-inside'>
+        <ul className='flex flex-col gap-4'>
           {sellingProcess.map((item, index) => (
-            <li key={index} className='flex gap-4 text-xl leading-loose'>
+            <li key={index} className='flex gap-4 '>
               <div>
                 {`${index + 1}.     `}
 
@@ -127,7 +127,11 @@ const Sell = () => {
         <h2 className='max-[600px]:text-[1.8rem] text-3xl font-bold'>
           Send us requirements:
         </h2>
+
+        <div className='-mx-2'>
         <BuysellForm />
+
+        </div>
 
         <div className='text-[0.7rem] leading-tight px-2 mt-10'>
 

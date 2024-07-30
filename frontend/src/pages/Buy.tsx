@@ -39,12 +39,12 @@ const Buy = () => {
   ];
 
   return (
-    <div className='pt-28 bg-primary-blue text-neutral-white text-2xl max-[600px]:text-xl font-normal'>
+    <div className='pt-24 bg-primary-blue text-neutral-white text-2xl max-[600px]:text-lg max-[600px]:leading-tight font-normal'>
 
       {/*written  */}
-      <div className='p-2'>
+      <div className='p-8'>
 
-        <div className='max-[600px]:text-3xl text-5xl font-bold'>
+        <div className='max-[600px]:text-3xl text-5xl font-bold text-primary-yellow'>
           Buy With Us
         </div>
         <div>
@@ -55,19 +55,19 @@ const Buy = () => {
 
         <div>
           <br />
-          <h2 className='text-3xl font-bold'>
+          <h2 className='max-[600px]:text-2xl text-3xl font-bold'>
             Before you start your search, ask yourself:
           </h2>
-          <ul className='text-[1rem] leading-loose'>
+          <ul className='flex flex-col gap-4'>
             {askYourselfList.map((item, index) => (
-              <li key={index} className='flex gap-4 text-xl leading-loose'>
+              <li key={index} className='flex gap-4 '>
                 <div>
                   {'⦿   '}
 
                 </div>
-                <div>
+                <div >
 
-                  <span className='font-bold ml-'>{item.heading}</span>{': '}
+                  <span className='font-bold'>{item.heading}</span>{': '}
                   {item.description}
                 </div>
               </li>
@@ -81,14 +81,16 @@ const Buy = () => {
       {/* form */}
       <div className='mt-10'>
 
-        <div className='max-[600px]:text-3xl text-3xl font-bold text-justify px-2'>
+        <div className='max-[600px]:text-3xl text-3xl font-bold text-justify px-8'>
           Send us requirements
         </div>
 
+        <div className='px-6'>
 
-        <BuysellForm />
+          <BuysellForm />
+        </div>
 
-        <div className='text-[0.7rem] leading-tight px-2 mt-10'>
+        <div className='text-[0.7rem] leading-tight mt-10 p-2'>
 
           By proceeding, you consent to receive text messages at the number you provided from Hans Real Estate regarding real estate matters, including marketing messages. This is not a condition of purchase. Message frequency may vary. You can text "Help" for assistance. By proceeding, you also agree to our Terms of Service and Privacy Policy. Standard message and data rates may apply.
 

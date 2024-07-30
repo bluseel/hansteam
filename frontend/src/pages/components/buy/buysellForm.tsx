@@ -5,6 +5,7 @@ import * as yup from 'yup';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
+// Yup schema for form validation
 const schema = yup.object().shape({
   firstName: yup.string().required('First name is required'),
   lastName: yup.string().required('Last name is required'),
@@ -14,16 +15,36 @@ const schema = yup.object().shape({
   propertyType: yup.string().oneOf(['Condominium', 'Single Family Residence', 'Town House', 'Investment Properties', 'Commercial', 'Land/Lot', 'Vacation Properties', 'Other']).required('Property type is required'),
   bedrooms: yup.number().min(0).max(6).required('Number of bedrooms is required'),
   bathrooms: yup.number().min(0).max(6).required('Number of bathrooms is required'),
-  minPrice: yup.number().min(0).required('Minimum price is required'),
-  maxPrice: yup.number().min(yup.ref('minPrice')).required('Maximum price is required'),
+  minPrice: yup.number().min(0, 'Minimum price must be at least 0').required('Minimum price is required'),
+  maxPrice: yup.number().min(yup.ref('minPrice'), 'Maximum price must be greater than or equal to Minimum price').required('Maximum price is required'),
   message: yup.string()
 });
 
-const inputFieldStyling = 'h-8 px-1 block w-full border-gray-300 rounded-md shadow-sm text-[1rem]'
-const inputLabelStyling = ' block font-medium text-white text-[1.2rem]'
-const errorStyling = 'text-red-300 font-bold text-xs'
+const inputFieldStyling = 'h-8 px-1 block w-full border-gray-300 rounded-md shadow-sm text-[1rem]';
+const inputLabelStyling = 'block font-medium text-white text-[1.2rem]';
+const errorStyling = 'text-red-300 font-bold text-xs';
 
 const LOCAL_STORAGE_KEY = 'realEstateFormData';
+
+// Define the allowed keys for the form data
+type AllowedKeys = "email" | "message" | "phone" | "firstName" | "lastName" | "interestedIn" | "propertyType" | "bedrooms" | "bathrooms" | "minPrice" | "maxPrice";
+
+// Type guard to check if a key is an allowed key
+const isAllowedKey = (key: string): key is AllowedKeys => {
+  return [
+    "email",
+    "message",
+    "phone",
+    "firstName",
+    "lastName",
+    "interestedIn",
+    "propertyType",
+    "bedrooms",
+    "bathrooms",
+    "minPrice",
+    "maxPrice"
+  ].includes(key);
+};
 
 const RealEstateForm: React.FC = () => {
   const { control, handleSubmit, register, setValue, watch, formState: { errors } } = useForm({
@@ -33,13 +54,15 @@ const RealEstateForm: React.FC = () => {
   const formValues = watch();
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000000]);
 
-
   useEffect(() => {
     const savedData = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (savedData) {
       const parsedData = JSON.parse(savedData);
       Object.keys(parsedData).forEach(key => {
-        setValue(key as keyof typeof parsedData, parsedData[key]);
+        // Ensure key is an allowed key before setting value
+        if (isAllowedKey(key)) {
+          setValue(key, parsedData[key]);
+        }
       });
       setPriceRange([parsedData.minPrice || 0, parsedData.maxPrice || 2000000]);
     }
@@ -53,12 +76,6 @@ const RealEstateForm: React.FC = () => {
     console.log(data);
   };
 
-
-  // slider
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({ ...formValues, minPrice: priceRange[0], maxPrice: priceRange[1] }));
-  }, [formValues, priceRange]);
-
   const onSliderChange = (value: [number, number]) => {
     setPriceRange(value);
     setValue('minPrice', value[0], { shouldValidate: true });
@@ -66,10 +83,9 @@ const RealEstateForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-black text-[1rem] p-2 ">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-black text-[1rem] p-2">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-
-        <div >
+        <div>
           <label htmlFor="firstName" className={inputLabelStyling}>First Name:</label>
           <input {...register('firstName')} className={inputFieldStyling} />
           {errors.firstName && <p className={errorStyling}>{errors.firstName.message}</p>}
@@ -143,8 +159,6 @@ const RealEstateForm: React.FC = () => {
           {errors.bathrooms && <p className={errorStyling}>{errors.bathrooms.message}</p>}
         </div>
 
-
-
         <div>
           <label htmlFor="minPrice" className={inputLabelStyling}>Min Price:</label>
           <select {...register('minPrice')} className={inputFieldStyling}>
@@ -160,7 +174,6 @@ const RealEstateForm: React.FC = () => {
           </select>
           {errors.minPrice && <p className={errorStyling}>{errors.minPrice.message}</p>}
         </div>
-
 
         <div>
           <label htmlFor="maxPrice" className={inputLabelStyling}>Max Price:</label>
@@ -179,25 +192,20 @@ const RealEstateForm: React.FC = () => {
         </div>
 
         {errors.minPrice && <p className={errorStyling}>{errors.minPrice.message}</p>}
-        {errors.maxPrice && <p className={errorStyling}>{errors.maxPrice.message}</p>}
       </div>
-
 
       <div className="max-[600px]:col-span-2 col-span-4 place-content-start">
         <label htmlFor="message" className={inputLabelStyling}>Questions / Where Are You Looking?</label>
-        <textarea {...register('message')} className='pl-1 h-28 mt-1  w-full border-gray-300 rounded-md shadow-sm' />
+        <textarea {...register('message')} className='pl-1 h-28 mt-1 w-full border-gray-300 rounded-md shadow-sm' />
         {errors.message && <p className={errorStyling}>{errors.message.message}</p>}
       </div>
 
-
-
-      <div className='flex flex-col items-center '>
+      <div className='flex flex-col items-center'>
         <button type="submit" className="-mt-4 w-full bg-primary-yellow text-black px-4 py-2 rounded-md shadow-sm font-bold">Submit</button>
         <div className='pl-2 text-white leading-normal'>
           Click reCAPTCHA of formsubmit.co after clicking this submit button
         </div>
       </div>
-
     </form>
   );
 };

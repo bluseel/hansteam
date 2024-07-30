@@ -4,10 +4,10 @@ import { teamData } from './teamsData'
 const Team = () => {
 
   return (
-    <div className='leading-none pt-28 bg-primary-blue text-neutral-white text-2xl max-[600px]:text-xl font-normal'>
-      <div className='flex flex-col gap-2 p-4'>
+    <div className='leading-none pt-24 bg-primary-blue text-neutral-white text-2xl max-[600px]:text-xl font-normal'>
+      <div className='flex flex-col gap-2 p-8'>
 
-        <div className='max-[600px]:text-3xl text-5xl font-bold'>
+        <div className='max-[600px]:text-3xl text-5xl font-bold  text-primary-yellow'>
           Hans Team of Experts
         </div>
         <div className='max-[600px]:text-2xl leading-7'>
@@ -22,8 +22,8 @@ const Team = () => {
         {teamData.map((employee) => (
           <div className=' w-64 flex flex-col bg-primary-yellow text-neutral-black rounded-xl'>
 
-            <div className=' h-60 object-cover'>
-              <img className='w-full h-full rounded-xl rounded-b-none' src="/employee.jpg" alt="" />
+            <div className=' h-60 object-cover bg-purple-700'>
+              <img className='w-full h-full rounded-xl rounded-b-none' src="/logo.png" alt="" />
             </div>
 
             <div className='p-2 flex flex-col gap-2'>

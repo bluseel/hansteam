@@ -13,13 +13,13 @@ import {
 const Testimonials = () => {
 
   function handleVideoAll() {
-    window.open('https://www.youtube.com/watch?v=s1NU_IMDJs0&list=PLNZG2cK2I_z69wgXNFOv9Gn_e78FNh5Nz&pp=iAQB', 
+    window.open('https://www.youtube.com/watch?v=s1NU_IMDJs0&list=PLNZG2cK2I_z69wgXNFOv9Gn_e78FNh5Nz&pp=iAQB',
       '_blank', 'noopener,noreferrer');
 
   }
-  
+
   function handleGoogleReviewsAll() {
-    window.open('https://www.google.com/search?q=hans+team&sca_esv=a2600e0876dec691&rlz=1C1CHBF_enPH977PH977&ei=6A2_ZbmmK4zO1e8P4OuJqAE&gs_ssp=eJzj4tVP1zc0TIm3SC-vNLQwYLRSNaiwsDBKTDFNTjZINUlKSTYztTKoSEm0TDE3MDA0MDMwM05NMvTizEjMK1YoSU3MBQBbShK4&oq=hans+team&gs_lp=Egxnd3Mtd2l6LXNlcnAiCWhhbnMgdGVhbSoCCAAyCxAuGIAEGMcBGK8BMgUQABiABDIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAuGBYYHhgKMgYQABgWGB4yCBAAGBYYHhgKMhoQLhiABBjHARivARiXBRjcBBjeBBjgBNgBAUjIGVAAWKwPcAJ4AZABAJgBc6ABwQiqAQM2LjW4AQPIAQD4AQHCAg4QABiABBiKBRixAxiDAcICCxAuGIAEGMcBGNEDwgILEAAYgAQYsQMYgwHCAg4QLhiABBiKBRixAxiDAcICChAAGIAEGIoFGEPCAggQABiABBixA8ICCxAuGIAEGLEDGNQCwgIREAAYgAQYigUYkQIYsQMYgwHCAg4QABiABBiKBRiRAhixA8ICEBAuGIAEGIoFGEMYxwEY0QPCAg0QLhiABBiKBRhDGLEDwgILEC4YgAQYsQMYgwHCAhEQLhiABBixAxiDARjHARjRA8ICChAuGIAEGIoFGEPCAgUQLhiABMICGRAuGIAEGIoFGEMYlwUY3AQY3gQY3wTYAQHCAgsQABiABBiKBRiRAsICFxAuGIAEGIoFGJECGMcBGK8BGJgFGJkFwgILEAAYgAQYigUYkgPCAg0QABiABBiKBRhDGMkDwgINEC4YgAQYigUYQxjUAsICDRAAGIAEGIoFGEMYsQPCAhAQLhiABBiKBRhDGLEDGIMBwgIIEC4YgAQYsQPCAggQLhixAxiABMICBxAAGIAEGArCAgcQLhiABBgK4gMEGAAgQboGBggBEAEYFA&sclient=gws-wiz-serp#lrd=0x882ad5cc0e4bdc65:0xda9d700106063eb1,1,,,,', 
+    window.open('https://www.google.com/search?q=hans+team&sca_esv=a2600e0876dec691&rlz=1C1CHBF_enPH977PH977&ei=6A2_ZbmmK4zO1e8P4OuJqAE&gs_ssp=eJzj4tVP1zc0TIm3SC-vNLQwYLRSNaiwsDBKTDFNTjZINUlKSTYztTKoSEm0TDE3MDA0MDMwM05NMvTizEjMK1YoSU3MBQBbShK4&oq=hans+team&gs_lp=Egxnd3Mtd2l6LXNlcnAiCWhhbnMgdGVhbSoCCAAyCxAuGIAEGMcBGK8BMgUQABiABDIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAuGBYYHhgKMgYQABgWGB4yCBAAGBYYHhgKMhoQLhiABBjHARivARiXBRjcBBjeBBjgBNgBAUjIGVAAWKwPcAJ4AZABAJgBc6ABwQiqAQM2LjW4AQPIAQD4AQHCAg4QABiABBiKBRixAxiDAcICCxAuGIAEGMcBGNEDwgILEAAYgAQYsQMYgwHCAg4QLhiABBiKBRixAxiDAcICChAAGIAEGIoFGEPCAggQABiABBixA8ICCxAuGIAEGLEDGNQCwgIREAAYgAQYigUYkQIYsQMYgwHCAg4QABiABBiKBRiRAhixA8ICEBAuGIAEGIoFGEMYxwEY0QPCAg0QLhiABBiKBRhDGLEDwgILEC4YgAQYsQMYgwHCAhEQLhiABBixAxiDARjHARjRA8ICChAuGIAEGIoFGEPCAgUQLhiABMICGRAuGIAEGIoFGEMYlwUY3AQY3gQY3wTYAQHCAgsQABiABBiKBRiRAsICFxAuGIAEGIoFGJECGMcBGK8BGJgFGJkFwgILEAAYgAQYigUYkgPCAg0QABiABBiKBRhDGMkDwgINEC4YgAQYigUYQxjUAsICDRAAGIAEGIoFGEMYsQPCAhAQLhiABBiKBRhDGLEDGIMBwgIIEC4YgAQYsQPCAggQLhixAxiABMICBxAAGIAEGArCAgcQLhiABBgK4gMEGAAgQboGBggBEAEYFA&sclient=gws-wiz-serp#lrd=0x882ad5cc0e4bdc65:0xda9d700106063eb1,1,,,,',
       '_blank', 'noopener,noreferrer');
 
 
@@ -49,7 +49,7 @@ const Testimonials = () => {
                   <div className='flex-[1] px-5 py-3'>
                     <div className='flex flex-col leading-none max-[600px]:text-xl pb-3'>
                       <div className='text-2xl italic tracking-widest '>
-                      {testimonial.name}
+                        {testimonial.name}
                       </div>
                       <div className='text-[1rem] font-normal'>{testimonial.occupation}</div>
                     </div>
@@ -59,7 +59,16 @@ const Testimonials = () => {
                   </div>
                   <div className='max-[600px]:h-[50%] max-[600px]:flex-none flex-[1] relative' >
                     {/* you see bunch of errors on console due to this embed */}
-                    <iframe width="100%" height="100%" src={testimonial.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={testimonial.url}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
 
                   </div>
                 </div>

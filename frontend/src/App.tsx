@@ -7,6 +7,7 @@ import Buy from './pages/Buy';
 import Sell from './pages/Sell';
 import Contact from './pages/Contact';
 import Team from './pages/team';
+import NotFound from './pages/NotFound'; // Import the NotFound component
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +21,7 @@ function App() {
         <Route path="/sell" element={<Sell />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/team" element={<Team />} />
+        <Route path="*" element={<NotFound />} /> {/* Add the NotFound route */}
       </Routes>
     </Router>
   );
