@@ -76,11 +76,11 @@ const WhyUs = () => {
           <span className=" max-[600px]:text-5xl max-[400px]:text-4xl text-7xl text-primary-yellow italic font-extrabold tracking-tight"> team </span>.
           And not just any team, but a team of 50 professionals with <span className="max-[400px]:text-4xl max-[600px]:text-5xl text-7xl text-nowrap text-primary-yellow italic font-extrabold tracking-tight"> 20 years  </span> of experience!"
         </div>
-        <div className="max-[400px]:text-2xl max-[600px]:text-3xl text-4xl text-primary-yellow">~Hans</div>
+        <div className="max-[400px]:text-2xl max-[600px]:text-3xl text-4xl text-primary-yellow uppercase">~hans ohrstrom</div>
       </div>
 
       {/* Stats about hands */}
-      <div className="relative pt-2 max-[600px]:pt-8">
+      <div className="relative pt-2 max-[600px]:pt-8 max-[600px]:pb-8">
         <div className=" text-neutral-white flex w-full max-[600px]:gap-4 max-[600px]:flex-col max-[600px]:items-center ">
           {stats.map((stat, index) => {
             const { value, ref } = animateValue(stat.number, stat.number < 10);

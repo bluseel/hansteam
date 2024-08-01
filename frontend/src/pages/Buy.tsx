@@ -48,7 +48,7 @@ const Buy = () => {
           Buy With Us
         </div>
         <div>
-          Are buying a property for the first time or had bad experience before?
+          Are you buying a property for the first time or had bad experience before?
           Be rest assured
           We at Hans Real Esate will be with you at every inch, to help you and assist you in buying the perfect property for you and your family
         </div>
@@ -79,10 +79,10 @@ const Buy = () => {
 
 
       {/* form */}
-      <div className='mt-10'>
+      <div className='mt-4'>
 
         <div className='max-[600px]:text-3xl text-3xl font-bold text-justify px-8'>
-          Send us requirements
+          Tell us what you are looking for
         </div>
 
         <div className='px-6'>

@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <div className="absolute w-full">
-      <div className="absolute inset-0 bg-[url('/waves.svg')] bg-cover bg-top"></div>
+      <div className="absolute inset-0 bg-[url('/waves.svg')] bg-fit bg-top"></div>
 
       <div className="relative z-10"></div>
       <div className="relative ">

@@ -125,7 +125,7 @@ const Sell = () => {
 
       <div>
         <h2 className='max-[600px]:text-[1.8rem] text-3xl font-bold'>
-          Send us requirements:
+          Send us you property details:
         </h2>
 
         <div className='-mx-2'>

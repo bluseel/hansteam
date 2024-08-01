@@ -1,48 +1,53 @@
 import React from 'react';
 import Rectangle from './rectangleLocation';
+import { Link } from 'react-router-dom';
 const OurLocations: React.FC = () => {
   const cities = [
-    { city: 'Newmarket', imageUrl: '/locations/ottawa.jpg' },
-    { city: 'Innisfil', imageUrl: '/locations/calgary.jpg' },
-    { city: 'Barrie', imageUrl: '/locations/montreal.jpg' },
-    { city: 'Toronto', imageUrl: '/locations/toronto.jpg' },
-    { city: 'Angus', imageUrl: '/locations/toronto.jpg' },
-    { city: 'Bradford', imageUrl: '/locations/toronto.jpg' },
-    { city: 'Richmond Hill', imageUrl: '/locations/toronto.jpg' },
-    { city: 'West Gwillimbury', imageUrl: '/locations/toronto.jpg' },
-    { city: 'East Gwillimbury', imageUrl: '/locations/toronto.jpg' },
-    // Add more cities as needed
+    { city: 'Newmarket', imageUrl: '/locations/newmarket.jpg', link: '/newmarket' },
+    { city: 'Innisfil', imageUrl: '/locations/innisfil.jpg', link: '/innisfil' },
+    { city: 'Barrie', imageUrl: '/locations/barrie.jpg', link: '/barrie' },
+    { city: 'Toronto', imageUrl: '/locations/toronto.jpg', link: '/toronto' },
+    { city: 'Angus', imageUrl: '/locations/angus.jpg', link: '/angus' },
+    { city: 'Bradford', imageUrl: '/locations/bradford.jpg', link: '/bradford' },
+    { city: 'Richmond Hill', imageUrl: '/locations/richmondhill.jpg', link: '/richmond-hill' },
+    { city: 'West Gwillimbury', imageUrl: '/locations/westgwillimbury.jpg', link: '/west-gwillimbury' },
+    { city: 'East Gwillimbury', imageUrl: '/locations/eastgwillimbury.jpg', link: '/east-gwillimbury' }
   ];
+  
+
+  const isMobile= (window.innerWidth <= 700);
+  console.log(isMobile);
+  
 
   return (
     <div className='text-3xl overflow-hidden h-screen bg-primary-yellow text-neutral-white overflow-x-hidden'>
 
       {/* Grid layout */}
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col">
 
         {/* first row */}
-        <div className='flex h-[23dvh] flex-row-reverse gap-1'>
+        <div className='flex h-[23dvh] max-[600px]:h-fit mb-1  flex-row-reverse gap-1 max-[600px]:flex-col '>
 
-          <div className=" w-full h-full flex items-center justify-center text-4xl italic text-neutral-black bg-primary-yellow z-10">
+          <div className=" w-full h-full max-[600px]:h-[7dvh] flex items-center justify-center text-4xl italic text-neutral-black bg-primary-yellow z-10">
             Our Locations
           </div>
           {cities.slice(0, 3).map((cityData, index) => (
             <div className='w-full h-fit'>
-              <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight='23dvh' />
+              <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight={isMobile?'9.6dvh':'23dvh'} link={cityData.link}/>
             </div>
           ))}
         </div>
 
         {/* Remaining rows */}
-        <div className='flex gap-1 flex-row'>
+        <div className='flex gap-1 flex-row max-[600px]:flex-col '>
 
-          {/* torronto big one */}
-          <div className='w-[50dvw] text-5xl'>
+          {/* toronto big one */}
+          <div className='w-[50dvw] max-[600px]:w-full  text-5xl max-[600px]:text-4xl'>
             {cities.map((cityData, index) => {
               if (index === 3) {
                 return (
                   <div>
-                    <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight='73dvh' />
+                    <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight={isMobile?'9.6dvh':'75dvh'} link={cityData.link} />
                   </div>
                 )
               }
@@ -54,13 +59,13 @@ const OurLocations: React.FC = () => {
           <div className='felx flex-col '>
 
             {/* 2nd row */}
-            <div className='flex w-[50dvw] gap-1 mb-1'>
+            <div className='flex w-[50dvw] max-[600px]:w-full gap-1 mb-1 max-[600px]:flex-col '>
               {cities.map((cityData, index) => {
                 if (index > 3 && index < 6) {
                   return (
                     <div className='w-full h-full'>
 
-                      <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight='23dvh' />
+                      <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight={isMobile?'9.6dvh':'23dvh'} link={cityData.link} />
                     </div>
                   )
                 }
@@ -68,27 +73,27 @@ const OurLocations: React.FC = () => {
             </div>
           
             {/* 2nd row */}
-            <div className='w-[50dvw]  mb-1'>
+            <div className='w-[50dvw] max-[600px]:w-full  mb-1 '>
               {cities.map((cityData, index) => {
                 if (index === 6) {
                   return (
                     <div className='w-full h-full '>
 
-                      <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight='25dvh' />
+                      <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight={isMobile?'9.6dvh':'23dvh'} link={cityData.link}/>
                     </div>
                   )
                 }
               })}
             </div>
 
-              {/*  row */}
-              <div className='flex w-[50dvw] gap-1 '>
+              {/* last row */}
+              <div className='flex w-[50dvw] max-[600px]:w-full gap-1 max-[600px]:flex-col '>
               {cities.map((cityData, index) => {
                 if (index > 6 && index < 9) {
                   return (
                     <div className='w-full h-full'>
 
-                      <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight='23dvh' />
+                      <Rectangle key={index} city={cityData.city} imageUrl={cityData.imageUrl} imgHeight={isMobile?'9.6dvh':'27dvh'} link={cityData.link} />
                     </div>
                   )
                 }
