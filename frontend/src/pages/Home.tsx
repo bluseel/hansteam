@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import lakesideBuilding from "/lakeside.jpg";
+// import lakesideBuilding from "/lakeside.jpg";
+const lakesideBuilding = "https://i.imgur.com/jstNld5.jpg";
 import WhyUs from "./components/home/WhyUs";
 import OurLocations from "./components/home/OurLocations";
 import Testimonials from "./components/home/testimonials";
@@ -18,7 +19,7 @@ const Home = () => {
     <div className="">
       <div className="top-0 z-[2] h-screen w-full bg-slate-600">
         <img
-          src="https://drive.google.com/uc?export=download&id=18A6nZmqTQlmATCDTNVCc-buTLrOx48qq"
+          src={lakesideBuilding}
           alt="real estate hero building"
           className="h-full w-full bg-yellow-600 object-cover"
         />

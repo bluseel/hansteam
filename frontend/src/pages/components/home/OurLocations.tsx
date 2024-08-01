@@ -5,35 +5,47 @@ const OurLocations: React.FC = () => {
   const cities = [
     {
       city: "Newmarket",
-      imageUrl: "/locations/newmarket.jpg",
+      imageUrl: "https://i.imgur.com/Kx6GY6Q.jpg",
       link: "/newmarket",
     },
     {
       city: "Innisfil",
-      imageUrl: "/locations/innisfil.jpg",
+      imageUrl: "https://i.imgur.com/NOnuqMB.jpg",
       link: "/innisfil",
     },
-    { city: "Barrie", imageUrl: "/locations/barrie.jpg", link: "/barrie" },
-    { city: "Toronto", imageUrl: "/locations/toronto.jpg", link: "/toronto" },
-    { city: "Angus", imageUrl: "/locations/angus.jpg", link: "/angus" },
+    {
+      city: "Barrie",
+      imageUrl: "https://i.imgur.com/kpAtSF3.jpg",
+      link: "/barrie",
+    },
+    {
+      city: "Toronto",
+      imageUrl: "https://i.imgur.com/cuiULU2.jpg",
+      link: "/toronto",
+    },
+    {
+      city: "Angus",
+      imageUrl: "https://i.imgur.com/jHLbHO6.jpg",
+      link: "/angus",
+    },
     {
       city: "Bradford",
-      imageUrl: "/locations/bradford.jpg",
+      imageUrl: "https://i.imgur.com/L38T4Xi.jpg",
       link: "/bradford",
     },
     {
       city: "Richmond Hill",
-      imageUrl: "/locations/richmondhill.jpg",
+      imageUrl: "https://i.imgur.com/p3WCwoI.jpg",
       link: "/richmond-hill",
     },
     {
       city: "West Gwillimbury",
-      imageUrl: "/locations/westgwillimbury.jpg",
+      imageUrl: "https://i.imgur.com/HHW6Yrm.jpg",
       link: "/west-gwillimbury",
     },
     {
       city: "East Gwillimbury",
-      imageUrl: "/locations/eastgwillimbury.jpg",
+      imageUrl: "https://i.imgur.com/2iEHfIc.jpg",
       link: "/east-gwillimbury",
     },
   ];
