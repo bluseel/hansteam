@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 // import lakesideBuilding from "/lakeside.jpg";
 const lakesideBuilding = "https://i.imgur.com/jstNld5.jpg";
 import WhyUs from "./components/home/WhyUs";
@@ -7,26 +7,49 @@ import Testimonials from "./components/home/testimonials";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const videoRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.setAttribute(
+        "src",
+        "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ&modestbranding=1&showinfo=0&iv_load_policy=3&rel=0",
+      );
+    }
+  }, []);
+
   const achievements = [
+    "Real Estate",
     "Excellence",
     "Trust",
-    "Quality",
+    // "Quality",
     "Success",
-    "Excellence",
+    "Real Estate",
   ];
 
   return (
     <div className="">
       <div className="top-0 z-[2] h-screen w-full bg-slate-600">
-        <img
+        {/* <img
           src={lakesideBuilding}
           alt="real estate hero building"
           className="h-full w-full bg-yellow-600 object-cover"
-        />
+        /> */}
+        <video
+          ref={videoRef}
+          src="https://i.imgur.com/w7TxM65.mp4"
+          // src="https://i.imgur.com/h0fkARW.mp4"
+          className="relative z-[50] h-full w-full object-cover"
+          muted
+          loop
+          playsInline
+        >
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Hero text*/}
-      <div className="absolute top-[30%] pl-5 max-[600px]:w-[100dvw] max-[600px]:overflow-hidden">
+      <div className="absolute top-[30%] z-[50] pl-5 max-[600px]:w-[100dvw] max-[600px]:overflow-hidden">
         <div className="relative z-[4] text-7xl text-neutral-white max-[600px]:text-6xl">
           20 Years of
         </div>
