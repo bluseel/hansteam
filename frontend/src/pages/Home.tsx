@@ -38,7 +38,7 @@ const Home = () => {
         <video
           ref={videoRef}
           src="https://i.imgur.com/w7TxM65.mp4"
-          // src="https://i.imgur.com/h0fkARW.mp4"
+          // src="https://i.imgur.com/h0fkARW.mp4" longer
           className="relative z-[50] h-full w-full object-cover"
           muted
           loop
