@@ -18,7 +18,7 @@ const Home = () => {
     <div className="">
       <div className="top-0 z-[2] h-screen w-full bg-slate-600">
         <img
-          src={lakesideBuilding}
+          src="https://drive.google.com/uc?export=download&id=18A6nZmqTQlmATCDTNVCc-buTLrOx48qq"
           alt="real estate hero building"
           className="h-full w-full bg-yellow-600 object-cover"
         />
