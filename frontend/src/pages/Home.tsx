@@ -13,7 +13,7 @@ const Home = () => {
     if (videoRef.current) {
       videoRef.current.setAttribute(
         "src",
-        "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&loop=1&playlist=dQw4w9WgXcQ&modestbranding=1&showinfo=0&iv_load_policy=3&rel=0",
+        "https://www.youtube.com/embed/oiW9BeIcsMg?autoplay=1&mute=1&controls=0&loop=1&playlist=oiW9BeIcsMg&modestbranding=1&showinfo=0&iv_load_policy=3&rel=0",
       );
     }
   }, []);
@@ -31,21 +31,22 @@ const Home = () => {
     <div className="">
       <div className="top-0 z-[2] h-screen w-full bg-slate-600">
         {/* <img
-          src={lakesideBuilding}
-          alt="real estate hero building"
-          className="h-full w-full bg-yellow-600 object-cover"
-        /> */}
-        <video
-          ref={videoRef}
-          src="https://i.imgur.com/w7TxM65.mp4"
-          // src="https://i.imgur.com/h0fkARW.mp4" longer
-          className="relative z-[50] h-full w-full object-cover"
-          muted
-          loop
-          playsInline
-        >
-          Your browser does not support the video tag.
-        </video>
+        src={lakesideBuilding}
+        alt="real estate hero building"
+        className="h-full w-full bg-yellow-600 object-cover"
+      /> */}
+        <div className="h-full w-full overflow-hidden">
+          <div className="relative z-[50] flex h-[1000px] w-full -translate-y-44 overflow-hidden">
+            <iframe
+              ref={videoRef}
+              className="pointer-events-none absolute left-0 top-0 h-full w-full object-fill max-[600px]:scale-[4]"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title="Background Video"
+            ></iframe>
+          </div>
+        </div>
       </div>
 
       {/* Hero text*/}
