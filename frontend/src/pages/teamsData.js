@@ -1,9 +1,9 @@
 const teamData = [
   {
-    "name": "Barack Hossain Obama",
-    "occupation": "Real Estate Agent",
-    "phoneNumber": "+1234567890",
-    "email": "barack.hossain.obama1234 @example.com"
+    "name": "Hans Ohrstorm",
+    "occupation": "Owner and Current CEO",
+    "phoneNumber": "905-773-7771​",
+    "email": "hansteam@hansohrstrom.ca"
   },
   {
     "name": "Bob Smith",

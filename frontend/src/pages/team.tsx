@@ -10,10 +10,15 @@ const Team = () => {
         </div>
         <div className="leading-7 max-[600px]:text-2xl">
           You don’t need an agent you need a team of qualified, trustable, and
-          experienced people. Lorem ipsum dolor sit amet consectetur. Et at
-          ornare nec tincidunt arcu. Et enim tellus ultrices semper augue
-          venenatis feugiat morbi ac. Id orci eu justo amet vel porttitor.
-          Aliquam lectus urna sed magnis pharetra scelerisque sit ante.
+          experienced people.Our team of experts is dedicated to helping you
+          find your dream property. With years of experience and a deep
+          understanding of the market, our professionals are committed to
+          providing personalized and comprehensive services. From initial
+          consultation to final closing, our knowledgeable agents, skilled
+          negotiators, and attentive support staff work tirelessly to ensure a
+          seamless and successful real estate experience. Trust us to guide you
+          every step of the way, delivering exceptional results and making your
+          real estate journey a rewarding one.
         </div>
       </div>
 

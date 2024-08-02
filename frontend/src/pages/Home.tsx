@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-// import lakesideBuilding from "/lakeside.jpg";
-const lakesideBuilding = "https://i.imgur.com/jstNld5.jpg";
+import lakesideBuilding from "/lakeside.jpg";
+// const lakesideBuilding = "https://i.imgur.com/jstNld5.jpg";
 import WhyUs from "./components/home/WhyUs";
 import OurLocations from "./components/home/OurLocations";
 import Testimonials from "./components/home/testimonials";
@@ -8,13 +8,15 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const videoRef = useRef<HTMLIFrameElement>(null);
+  const isMobile = window.innerWidth <= 768;
+
+  const ytsrc = isMobile
+    ? "https://www.youtube.com/embed/mCFqF3SyRLk?autoplay=1&mute=1&controls=0&loop=1&playlist=mCFqF3SyRLk&modestbranding=1&showinfo=0&iv_load_policy=3&rel=0"
+    : "https://www.youtube.com/embed/SqW6q56lAy4?autoplay=1&mute=1&controls=0&loop=1&playlist=SqW6q56lAy4&modestbranding=1&showinfo=0&iv_load_policy=3&rel=0";
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.setAttribute(
-        "src",
-        "https://www.youtube.com/embed/oiW9BeIcsMg?autoplay=1&mute=1&controls=0&loop=1&playlist=oiW9BeIcsMg&modestbranding=1&showinfo=0&iv_load_policy=3&rel=0",
-      );
+      videoRef.current.setAttribute("src", ytsrc);
     }
   }, []);
 
@@ -30,16 +32,16 @@ const Home = () => {
   return (
     <div className="">
       <div className="top-0 z-[2] h-screen w-full bg-slate-600">
-        {/* <img
-        src={lakesideBuilding}
-        alt="real estate hero building"
-        className="h-full w-full bg-yellow-600 object-cover"
-      /> */}
+        <img
+          src={lakesideBuilding}
+          alt="real estate hero building"
+          className="absolute z-[40] h-full w-full bg-yellow-600 object-cover"
+        />
         <div className="h-full w-full overflow-hidden">
-          <div className="relative z-[50] flex h-[1000px] w-full -translate-y-44 overflow-hidden">
+          <div className="relative z-[50] flex h-[1000px] w-full -translate-y-44 overflow-hidden max-[450px]:h-[1500px] max-[450px]:-translate-y-60 max-[400px]:-translate-y-80 max-[400px]:scale-[1.4]">
             <iframe
               ref={videoRef}
-              className="pointer-events-none absolute left-0 top-0 h-full w-full object-fill max-[600px]:scale-[4]"
+              className="pointer-events-none absolute left-0 top-0 h-full w-full scale-[1] object-fill min-[400px]:scale-[1.4]"
               frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
