@@ -2,18 +2,38 @@ import { useEffect, useState, useRef } from "react";
 
 const WhyUs = () => {
   const stats = [
-    { name: "Real Estate Sales", number: 2.5, icon: "/sale-statistics.svg", alt: "real estate sales img" },
-    { name: "Happy Customers", number: 6000, icon: "/happy-face.svg", alt: "happy customers" },
-    { name: "YORK REGION and SIMCOE COUNTY ", number: 0, icon: "/1.svg", alt: "happy customers" },
-    { name: "Properties Sold", number: 3000, icon: "/property.svg", alt: "property sold" },
+    {
+      name: "Real Estate Sales",
+      number: 2.5,
+      icon: "/sale-statistics.svg",
+      alt: "real estate sales img",
+    },
+    {
+      name: "Happy Customers",
+      number: 6000,
+      icon: "/happy-face.svg",
+      alt: "happy customers",
+    },
+    {
+      name: "YORK REGION and SIMCOE COUNTY ",
+      number: 0,
+      icon: "/1.svg",
+      alt: "happy customers",
+    },
+    {
+      name: "Properties Sold",
+      number: 3000,
+      icon: "/property.svg",
+      alt: "property sold",
+    },
   ];
 
   const totalDuration = 5000; // Total duration for the animation in milliseconds
 
   // Easing function: easeOutQuad
-  const easeOutQuad = (t:number) => t * (2 - t);
+  const easeOutQuad = (t: number) => t * (2 - t);
 
-  const animateValue = (endValue:number, isDecimal:boolean) => {
+  const animateValue = (endValue: number, isDecimal: boolean) => {
     const [value, setValue] = useState(0);
     const [isInView, setIsInView] = useState(false);
     const ref = useRef(null);
@@ -28,7 +48,7 @@ const WhyUs = () => {
             }
           });
         },
-        { threshold: 0.1 } // Adjust threshold as needed
+        { threshold: 0.1 }, // Adjust threshold as needed
       );
 
       if (ref.current) {
@@ -68,36 +88,58 @@ const WhyUs = () => {
   };
 
   return (
-    <div className="max-[600px]:h-fit h-[100dvh] bg-primary-blue text-neutral-white max-[600px]:pt-6">
-      <div className="ml-[10%] w-[80%] text-justify leading-[9rem] #F6E100">
+    <div className="flex h-[100dvh] flex-col place-content-center bg-primary-blue text-neutral-white max-[600px]:h-fit max-[600px]:pt-6">
+      <div className="#F6E100 ml-[10%] w-[80%] text-justify leading-[9rem]">
         {/* hans message */}
         <div className="text-5xl max-[600px]:text-4xl max-[400px]:text-3xl">
           "You do not need an agent. You need
-          <span className=" max-[600px]:text-5xl max-[400px]:text-4xl text-7xl text-primary-yellow italic font-extrabold tracking-tight"> team </span>.
-          And not just any team, but a team of 50 professionals with <span className="max-[400px]:text-4xl max-[600px]:text-5xl text-7xl text-nowrap text-primary-yellow italic font-extrabold tracking-tight"> 20 years  </span> of experience!"
+          <span className="text-7xl font-extrabold italic tracking-tight text-primary-yellow max-[600px]:text-5xl max-[400px]:text-4xl">
+            {" "}
+            team{" "}
+          </span>
+          . And not just any team, but a team of 50 professionals with{" "}
+          <span className="text-nowrap text-7xl font-extrabold italic tracking-tight text-primary-yellow max-[600px]:text-5xl max-[400px]:text-4xl">
+            {" "}
+            20 years{" "}
+          </span>{" "}
+          of experience!"
         </div>
-        <div className="max-[400px]:text-2xl max-[600px]:text-3xl text-4xl text-primary-yellow uppercase">~hans ohrstrom</div>
+        <div className="text-4xl uppercase text-primary-yellow max-[600px]:text-3xl max-[400px]:text-2xl">
+          ~hans ohrstrom
+        </div>
       </div>
 
       {/* Stats about hands */}
-      <div className="relative pt-2 max-[600px]:pt-8 max-[600px]:pb-8">
-        <div className=" text-neutral-white flex w-full max-[600px]:gap-4 max-[600px]:flex-col max-[600px]:items-center ">
+      <div className="relative pt-2 max-[600px]:pb-8 max-[600px]:pt-8">
+        <div className="flex w-full text-neutral-white max-[600px]:flex-col max-[600px]:items-center max-[600px]:gap-4">
           {stats.map((stat, index) => {
             const { value, ref } = animateValue(stat.number, stat.number < 10);
             return (
-              <div key={index} className="flex-1 flex flex-col max-[600px]:flex-row place-content-center items-center overflow-hidden" ref={ref}>
-                <div className="max-[400px]:h-20 h-40 max-[600px]:pr-4 ">
-                  <img src={stat.icon} alt={stat.alt} className="w-full h-full" />
-                </div>
-                
-                <div className="flex flex-col items-center max-[600px]:place-content-center text-center">
-                  <div className="max-[600px]:text-3xl text-5xl">
-                    {stat.number === 0? `Homelife's`:
-                    stat.number < 10 ? `${value.toFixed(2)}B+` : `${Math.round(value)}+`}
-                  </div>
-                  <div className="max-[600px]:text-sm max-[600px]:w-40">{stat.name}</div>
+              <div
+                key={index}
+                className="flex flex-1 flex-col place-content-center items-center overflow-hidden max-[600px]:flex-row"
+                ref={ref}
+              >
+                <div className="h-40 max-[600px]:pr-4 max-[400px]:h-20">
+                  <img
+                    src={stat.icon}
+                    alt={stat.alt}
+                    className="h-full w-full"
+                  />
                 </div>
 
+                <div className="flex flex-col items-center text-center max-[600px]:place-content-center">
+                  <div className="text-5xl max-[600px]:text-3xl">
+                    {stat.number === 0
+                      ? `Homelife's`
+                      : stat.number < 10
+                        ? `${value.toFixed(2)}B+`
+                        : `${Math.round(value)}+`}
+                  </div>
+                  <div className="max-[600px]:w-40 max-[600px]:text-sm">
+                    {stat.name}
+                  </div>
+                </div>
               </div>
             );
           })}
