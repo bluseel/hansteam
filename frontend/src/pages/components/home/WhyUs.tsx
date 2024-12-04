@@ -105,7 +105,7 @@ const WhyUs = () => {
           of experience!"
         </div>
         <div className="text-4xl uppercase text-primary-yellow max-[600px]:text-3xl max-[400px]:text-2xl">
-          ~hans ohrstrom
+          ~Saul Johnson
         </div>
       </div>
 

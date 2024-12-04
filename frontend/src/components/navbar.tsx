@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // import logo from '/logo.png';
-const logo = "https://i.imgur.com/5FnceeT.png";
+const logo = "/logo.png";
 import hamburger from "/hamburger.svg";
 import lakeside from "/lakeside.jpg";
 

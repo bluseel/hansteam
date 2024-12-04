@@ -15,6 +15,15 @@ const Home = () => {
         <WhyUs />
         <OurLocations />
         <Testimonials />
+        <div
+          className="bg-primary-blue pl-10 text-primary-yellow hover:cursor-pointer"
+          onClick={() => {
+            window.location.href = "https://bluseel.com/";
+          }}
+        >
+          Website by
+          <span className="font-[Anton,sans-serif] font-light"> bluseel</span>
+        </div>
       </Suspense>
     </div>
   );

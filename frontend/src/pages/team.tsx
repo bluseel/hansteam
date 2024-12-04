@@ -6,7 +6,7 @@ const Team = () => {
     <div className="bg-primary-blue pt-24 text-2xl font-normal leading-none text-neutral-white max-[600px]:text-xl">
       <div className="flex flex-col gap-2 p-8">
         <div className="text-5xl font-bold text-primary-yellow max-[600px]:text-3xl">
-          Hans Team of Experts
+          Saul Team of Experts
         </div>
         <div className="leading-7 max-[600px]:text-2xl">
           You don’t need an agent you need a team of qualified, trustable, and
@@ -28,7 +28,7 @@ const Team = () => {
             <div className="h-60 bg-purple-700 object-cover">
               <img
                 className="h-full w-full rounded-xl rounded-b-none"
-                src="https://i.imgur.com/5FnceeT.png"
+                src="/employee.jpg"
                 alt=""
               />
             </div>

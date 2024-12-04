@@ -1,6 +1,6 @@
-import { Trash } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import { GoogleReviews, VideoTestimonials } from './testimonialsData.js'
+import { Trash } from "lucide-react";
+import { useEffect, useState } from "react";
+import { GoogleReviews, VideoTestimonials } from "./testimonialsData.js";
 
 import {
   Carousel,
@@ -8,56 +8,55 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../../../../shadcn/components/ui/carousel.js"
+} from "../../../../shadcn/components/ui/carousel.js";
 
 const Testimonials = () => {
-
   function handleVideoAll() {
-    window.open('https://www.youtube.com/watch?v=s1NU_IMDJs0&list=PLNZG2cK2I_z69wgXNFOv9Gn_e78FNh5Nz&pp=iAQB',
-      '_blank', 'noopener,noreferrer');
-
+    window.open(
+      "https://www.youtube.com/watch?v=bS08iUfUw-I",
+      "_blank",
+      "noopener,noreferrer",
+    );
   }
 
   function handleGoogleReviewsAll() {
-    window.open('https://www.google.com/search?q=hans+team&sca_esv=a2600e0876dec691&rlz=1C1CHBF_enPH977PH977&ei=6A2_ZbmmK4zO1e8P4OuJqAE&gs_ssp=eJzj4tVP1zc0TIm3SC-vNLQwYLRSNaiwsDBKTDFNTjZINUlKSTYztTKoSEm0TDE3MDA0MDMwM05NMvTizEjMK1YoSU3MBQBbShK4&oq=hans+team&gs_lp=Egxnd3Mtd2l6LXNlcnAiCWhhbnMgdGVhbSoCCAAyCxAuGIAEGMcBGK8BMgUQABiABDIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAuGBYYHhgKMgYQABgWGB4yCBAAGBYYHhgKMhoQLhiABBjHARivARiXBRjcBBjeBBjgBNgBAUjIGVAAWKwPcAJ4AZABAJgBc6ABwQiqAQM2LjW4AQPIAQD4AQHCAg4QABiABBiKBRixAxiDAcICCxAuGIAEGMcBGNEDwgILEAAYgAQYsQMYgwHCAg4QLhiABBiKBRixAxiDAcICChAAGIAEGIoFGEPCAggQABiABBixA8ICCxAuGIAEGLEDGNQCwgIREAAYgAQYigUYkQIYsQMYgwHCAg4QABiABBiKBRiRAhixA8ICEBAuGIAEGIoFGEMYxwEY0QPCAg0QLhiABBiKBRhDGLEDwgILEC4YgAQYsQMYgwHCAhEQLhiABBixAxiDARjHARjRA8ICChAuGIAEGIoFGEPCAgUQLhiABMICGRAuGIAEGIoFGEMYlwUY3AQY3gQY3wTYAQHCAgsQABiABBiKBRiRAsICFxAuGIAEGIoFGJECGMcBGK8BGJgFGJkFwgILEAAYgAQYigUYkgPCAg0QABiABBiKBRhDGMkDwgINEC4YgAQYigUYQxjUAsICDRAAGIAEGIoFGEMYsQPCAhAQLhiABBiKBRhDGLEDGIMBwgIIEC4YgAQYsQPCAggQLhixAxiABMICBxAAGIAEGArCAgcQLhiABBgK4gMEGAAgQboGBggBEAEYFA&sclient=gws-wiz-serp#lrd=0x882ad5cc0e4bdc65:0xda9d700106063eb1,1,,,,',
-      '_blank', 'noopener,noreferrer');
-
-
+    window.open(
+      "https://www.youtube.com/watch?v=bS08iUfUw-I",
+      "_blank",
+      "noopener,noreferrer",
+    );
   }
 
-
   return (
-    <div className=' min-h-[100dvh] bg-primary-blue max-[600px]:px-4 px-10 text-neutral-white max-[600px]:text-xl text-3xl 
-    flex flex-col max-[600px]:gap-[4dvh] gap-[24dvh] overflow-x-hidden w-full'>
-
-
+    <div className="flex min-h-[100dvh] w-full flex-col gap-[24dvh] overflow-x-hidden bg-primary-blue px-10 text-3xl text-neutral-white max-[600px]:gap-[4dvh] max-[600px]:px-4 max-[600px]:text-xl">
       {/* Video Testimonials*/}
-      <div className='max-[600px]:h-fit w-full pt-4 h-[40dvh] '>
-        <div className='flex pb-1 items-center'>
-          <div className='w-[40px] h-[40px] mr-2'>
-            <img src="/youtube.png" alt="" className='w-full h-full' />
+      <div className="h-[40dvh] w-full pt-4 max-[600px]:h-fit">
+        <div className="flex items-center pb-1">
+          <div className="mr-2 h-[40px] w-[40px]">
+            <img src="/youtube.png" alt="" className="h-full w-full" />
           </div>
           <div>Video Reviews</div>
         </div>
 
-        <Carousel className=' w-full h-fit' opts={{ align: "start" }}>
-
+        <Carousel className="h-fit w-full" opts={{ align: "start" }}>
           <CarouselContent>
             {VideoTestimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                <div className='max-[600px]:h-fit max-[600px]:flex-col-reverse bg-purple-700 w-full  h-[47dvh] flex'>
-                  <div className='flex-[1] px-5 py-3'>
-                    <div className='flex flex-col leading-none max-[600px]:text-xl pb-3'>
-                      <div className='text-2xl italic tracking-widest '>
+                <div className="flex h-[47dvh] w-full bg-purple-700 max-[600px]:h-fit max-[600px]:flex-col-reverse">
+                  <div className="flex-[1] px-5 py-3">
+                    <div className="flex flex-col pb-3 leading-none max-[600px]:text-xl">
+                      <div className="text-2xl italic tracking-widest">
                         {testimonial.name}
                       </div>
-                      <div className='text-[1rem] font-normal'>{testimonial.occupation}</div>
+                      <div className="text-[1rem] font-normal">
+                        {testimonial.occupation}
+                      </div>
                     </div>
-                    <div className='h-fit max-[600px]:text-[0.9rem] max-[600px]:leading-[20px] max-[600px]:w-full  text-[1.2rem] leading-tight font-thin text-justify'>
+                    <div className="h-fit text-justify text-[1.2rem] font-thin leading-tight max-[600px]:w-full max-[600px]:text-[0.9rem] max-[600px]:leading-[20px]">
                       {testimonial.review}
                     </div>
                   </div>
-                  <div className='max-[600px]:h-[50%] max-[600px]:flex-none flex-[1] relative' >
+                  <div className="relative flex-[1] max-[600px]:h-[50%] max-[600px]:flex-none">
                     {/* you see bunch of errors on console due to this embed */}
                     <iframe
                       width="100%"
@@ -69,87 +68,83 @@ const Testimonials = () => {
                       referrerPolicy="strict-origin-when-cross-origin"
                       allowFullScreen
                     ></iframe>
-
                   </div>
                 </div>
-
-
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className='w-fit absolute -top-10 right-12'>
-            <div onClick={handleVideoAll} className=' hover:cursor-pointer bg-primary-yellow text-neutral-black px-4 py-[2px] text-xl'>
+          <div className="absolute -top-10 right-12 w-fit">
+            <div
+              onClick={handleVideoAll}
+              className="bg-primary-yellow px-4 py-[2px] text-xl text-neutral-black hover:cursor-pointer"
+            >
               All
             </div>
-            <CarouselPrevious className='rounded-none bg-primary-yellow text-black border-primary-yellow' />
-            <CarouselNext className='rounded-none bg-primary-yellow text-black border-primary-yellow' />
-
+            <CarouselPrevious className="rounded-none border-primary-yellow bg-primary-yellow text-black" />
+            <CarouselNext className="rounded-none border-primary-yellow bg-primary-yellow text-black" />
           </div>
         </Carousel>
-
-
       </div>
 
       {/* Google reviews*/}
-      <div className='mb-4'>
-        <div className='flex pb-1 items-center'>
-          <div className='w-[40px] mr-2'>
-            <img src="/google.png" alt="" className='w-full h-full p-1' />
+      <div className="mb-4">
+        <div className="flex items-center pb-1">
+          <div className="mr-2 w-[40px]">
+            <img src="/google.png" alt="" className="h-full w-full p-1" />
           </div>
           <div>Google Review</div>
         </div>
 
-        <Carousel className=' w-full h-fit' opts={{ align: "start" }}>
-
+        <Carousel className="h-fit w-full" opts={{ align: "start" }}>
           <CarouselContent>
             {GoogleReviews.map((reviewer, index) => (
-              <CarouselItem className='md:basis-1/2 ' key={index}>
-                <div className='leading-none max-[600px]:h-fit max-[600px]:flex-none max-[600px]:w-full flex bg-purple-700 p-2'>
-                  <div className='w-[40px] h-[40px]'>
-                    <img src="/user.png" alt="" className='w-full h-full' />
+              <CarouselItem className="md:basis-1/2" key={index}>
+                <div className="flex bg-purple-700 p-2 leading-none max-[600px]:h-fit max-[600px]:w-full max-[600px]:flex-none">
+                  <div className="h-[40px] w-[40px]">
+                    <img src="/user.png" alt="" className="h-full w-full" />
                   </div>
 
-                  <div className=' max-[600px]:w-full w-[40dvw] text-[13px] pl-1'> {/*content  */}
-                    <div className=' flex flex-col'>
-                      <div >{reviewer.name}</div>
-                      <div className='font-normal'>{reviewer.occupation}</div>
-
+                  <div className="w-[40dvw] pl-1 text-[13px] max-[600px]:w-full">
+                    {" "}
+                    {/*content  */}
+                    <div className="flex flex-col">
+                      <div>{reviewer.name}</div>
+                      <div className="font-normal">{reviewer.occupation}</div>
                     </div>
-                    <div className='my-2 h-3 w-[13%] overflow-hidden '>
-                      <div className='flex h-3 w-fit'>
-                        {
-                          reviewer.stars.map((item, index) => (
-                            <img key={index} src="/star.png" className='h-full w-full' alt="" />
-                          ))
-                        }
+                    <div className="my-2 h-3 w-[13%] overflow-hidden">
+                      <div className="flex h-3 w-fit">
+                        {reviewer.stars.map((item, index) => (
+                          <img
+                            key={index}
+                            src="/star.png"
+                            className="h-full w-full"
+                            alt=""
+                          />
+                        ))}
                       </div>
-
-
                     </div>
-                    <div className=' leading-tight font-normal'>
+                    <div className="font-normal leading-tight">
                       {reviewer.review}
                     </div>
                   </div>
-
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className='w-fit absolute -top-10 right-12'>
-            <div onClick={handleGoogleReviewsAll} className='hover:cursor-pointer bg-primary-yellow text-neutral-black px-4 py-[2px] text-xl'>
+          <div className="absolute -top-10 right-12 w-fit">
+            <div
+              onClick={handleGoogleReviewsAll}
+              className="bg-primary-yellow px-4 py-[2px] text-xl text-neutral-black hover:cursor-pointer"
+            >
               All
             </div>
-            <CarouselPrevious className='rounded-none bg-primary-yellow text-black border-primary-yellow' />
-            <CarouselNext className='rounded-none bg-primary-yellow text-black border-primary-yellow' />
-
+            <CarouselPrevious className="rounded-none border-primary-yellow bg-primary-yellow text-black" />
+            <CarouselNext className="rounded-none border-primary-yellow bg-primary-yellow text-black" />
           </div>
         </Carousel>
-
-
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Testimonials
+export default Testimonials;
